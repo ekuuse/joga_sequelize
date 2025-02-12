@@ -3,7 +3,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-    queryInterface.bulkInsert('Articles', [{
+    await queryInterface.bulkInsert('Articles', [{
       name: 'Introduction to Ashtanga',
       slug: 'introduction-to-ashtanga',
       image: 'ashtanga.jpg',
@@ -12,7 +12,7 @@ module.exports = {
       createdAt: new Date(),
       updatedAt: new Date()
     }]),
-    queryInterface.bulkInsert('Articles', [{
+    await queryInterface.bulkInsert('Articles', [{
       name: 'Morning vinyasa flow routine',
       slug: 'morning-vinyasa-flow-routine',
       image: 'morning.jpg',
@@ -21,7 +21,7 @@ module.exports = {
       createdAt: new Date(),
       updatedAt: new Date()
     }]),
-    queryInterface.bulkInsert('Articles', [{
+    await queryInterface.bulkInsert('Articles', [{
       name: 'Secrets of a yoga teacher',
       slug: 'secrets-of-a-yoga-teacher',
       image: 'yoga-teacher.jpg',
@@ -33,7 +33,6 @@ module.exports = {
   },
 
   async down (queryInterface, Sequelize) {
-    return queryInterface.bulkDelete('Articles', null, {})
+    await queryInterface.bulkDelete('Articles', null, {})
   }
 };
-
