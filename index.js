@@ -16,9 +16,7 @@ sequelize
         console.error("db not connected: ", err)
     })
 
-app.get("/", (req,res) => {
-    res.json({message: "welcome"})
-})
+
 
 const articleRouter = require('./routes/article')
 app.use('/', articleRouter)
